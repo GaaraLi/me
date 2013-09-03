@@ -1,9 +1,9 @@
 Me::Application.routes.draw do
   match '/faker', to: "skill#faker"
 
-  get "about", to:'static_page/about'
+  match "/about", to:'static_page#about'
 
-  get "contact", to:'static_page/contact'
+  match "/contact", to:'static_page#contact'
 
   match '/resume', to: 'resume#index'
 
