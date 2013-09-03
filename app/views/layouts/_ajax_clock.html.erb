@@ -1,0 +1,16 @@
+<%= javascript_tag do -%>
+	$(document).ready(
+	function(){
+		window.setTimeout( ajaxtime, 1000);
+		function ajaxtime(){
+		$.ajax({
+				url:"<%= show_ajax_time_path%>",
+				type: "GET",
+				dataType: "script"
+				});
+			}
+		}
+	);
+<% end -%>
+
+	<%= @ajax_time.strftime("%I:%M:%S %m-%d-%Y %p") %>

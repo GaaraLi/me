@@ -1,0 +1,32 @@
+<div id="div3_hidden" style=" background-color:white; display:none;  position:absolute; border:solid;">
+	<h3 style="background-color:#8C8C8C;">parse('name.name') </h3>
+	<h4>-faker/lib/faker.rb</h4>
+	<hr/>
+	<p>
+		<pre>
+def parse(key)
+    fetch(key).scan(/#\{([A-Za-z]+\.)?([^\}]+)\}([^#]+)?/).map {|kls, meth, etc|
+	    cls = kls ? Faker.const_get(kls.chop) : self
+	    text = cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
+	    text += etc.to_s
+     }.join
+end
+		</pre>
+As we can see in the code. the value of the var key is "name.name". then the fetch(key) was called right now. the result of it was named below randomly.
+<h4>|-faker/lib/locales/en.yml</h4>
+<pre>
+- "#{prefix} #{first_name} #{last_name}"
+- "#{first_name} #{last_name} #{suffix}"
+- "#{first_name} #{last_name}"
+- "#{first_name} #{last_name}"
+- "#{first_name} #{last_name}"
+- "#{first_name} #{last_name}"
+</pre>
+after a few RE steps, mapping the result of fetch you may need two or three rutines.
+each time you will meet one name by this line
+<pre>
+text = cls.respond_to?(meth) ? cls.send(meth) : fetch("#{(kls || self).to_s.split('::').last.downcase}.#{meth.downcase}")
+</pre>
+at last join them together, the name will be all set .
+	</p>
+</div>

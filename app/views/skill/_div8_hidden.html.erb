@@ -1,0 +1,20 @@
+<div id="div8_hidden" style=" background-color:white; display:none;  position:absolute; border:solid;">
+	<h3 style="background-color:#8C8C8C;">fetch(key) </h3>
+	<h4>-faker/lib/faker.rb</h4>
+	<hr/>
+	<p>
+		<pre>
+def fetch(key)
+    fetched = translate("faker.#{key}")
+    fetched = fetched.sample if fetched.respond_to?(:sample)
+    if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        regexify(fetched)
+    else
+        fetched
+    end
+end
+		</pre>
+this is the second call of the fetch def .as the result of the translation, the var fetched was contented by a bunch of names(if you output the fetched now, you will see a lot of names, just like the value of name in the en.yml).<br/>
+still screaming again ?
+	</p>
+</div>

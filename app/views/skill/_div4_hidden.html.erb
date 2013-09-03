@@ -1,0 +1,20 @@
+<div id="div4_hidden" style=" background-color:white; display:none;  position:absolute; border:solid;">
+	<h3 style="background-color:#8C8C8C;">fetch(key) </h3>
+	<h4>-faker/lib/faker.rb</h4>
+	<hr/>
+	<p>
+		<pre>
+def fetch(key)
+    fetched = translate("faker.#{key}")
+    fetched = fetched.sample if fetched.respond_to?(:sample)
+    if fetched.match(/^\//) and fetched.match(/\/$/) # A regex
+        regexify(fetched)
+    else
+        fetched
+    end
+end
+		</pre>
+In this one , we call the translate firstly, (in the first call by parse, the key was "name.name" and you can got result shown in the parse function.)  then call fetched.sample and just choose one name randomly, so you know what ,that's just this simple ...<br/>
+At the end of it , still a little RE for the name, and maybe we will call the regexify, and if you are, get ready to screaming.
+	</p>
+</div>

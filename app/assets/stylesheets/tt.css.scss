@@ -1,0 +1,130 @@
+@import "bootstrap";
+
+/* the google fonts*/
+@import url(http://fonts.googleapis.com/css?family=Meie+Script&subset=latin,latin-ext);
+
+/* universal */
+
+html{ 
+	overflow-y: scroll; 
+}
+
+body { 
+	padding-top: 60px; 
+	background: url(green.jpg);
+}
+
+section{ overflow: auto; }
+
+textarea{ resize: vertical;}
+
+.center{ text-align: center;}
+
+.center{ margin-bottom:10px; }
+
+/* header */
+
+#logo{
+	float: left;
+	margin-right: 10px;
+	font-size: 2em;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 15px;
+	font-weight:bold;
+	line-height:1;
+	&:hover {
+		color:white;
+		text-decoration:none;
+	}
+}
+
+/* content */
+
+.content{
+	margin-top: 50px;
+	width: 85%;
+}
+
+/* markdown */
+
+.markdown-input{
+	width:800px;
+}
+
+/* button */
+
+.btn-middle{
+	text-align:center
+}
+
+/* font */
+
+.meie-script{
+	font-family: 'Meie Script';
+}
+
+/* container-opacity */
+.container-opacity{
+	opacity: .9;
+}
+
+/* fixed-in-background */
+
+.fixed-in-background{
+	background-color: #DBD9D9;
+	width: 200px;
+}
+
+/* website2 */
+.left{
+	vertical-align: top;
+	background-color: #EEEEEE;
+	width: 29%;
+	padding: 17px;
+#	float: left;
+	display: inline-block;
+#	float: inline-block;
+}
+.middle{
+	vertical-align: top;
+	margin-top: 0px;
+#	float: left;
+	width: 29%;
+	padding: 17px;
+	background-color: black;
+	display: inline-block;
+#	float: inline-block;
+}
+.right{
+#	float: right;
+	vertical-align: top;
+	width: 29%;
+	padding: 17px;
+	background-color: red;
+	display: inline-block;
+#	display: -moz-inline-stack;
+#	display: inline;
+}
+
+.left_line_div{
+	padding: 10px;
+	background-color: blue;
+	border-spacing: 19px;
+	border-collapse: separate;
+	width: 95%;
+	overflow: hidden;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.left_line_td{
+	background-color: blue;
+	width: 300px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
