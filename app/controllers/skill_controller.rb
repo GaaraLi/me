@@ -1,4 +1,8 @@
 class SkillController < ApplicationController
-  def faker
+	def faker
+		
+	end
+	
+  def source_code_analysis
   end
 end

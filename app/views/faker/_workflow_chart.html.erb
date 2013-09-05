@@ -1,0 +1,149 @@
+<script type="text/javascript" >
+
+(function (document) {
+	$.fn.Drag= function(){
+		var M= false;
+		var Rx, Ry;
+		var t= $(this);
+
+		t.mousedown(function (event){
+			Rx= event.pageX- (parseInt(t.css("left")) || 0);
+			Ry= event.pageY- (parseInt(t.css("top")) || 0);
+			t.css("position", "absolute").css('cursor','move').fadeTo(20,.8);
+			M= true;
+		})
+		.mouseup(function (event){
+			M= false;
+			t.fadeTo(20, 1);
+		});
+
+		$(document).mousemove(function (event){
+			if (M) {
+				t.css({
+					top: event.pageY- Ry,
+					left: event.pageX- Rx
+				});
+			}
+		});
+	}
+})(document);
+
+$(document).ready(function(){
+	$("#div1_hidden").Drag();
+	$("#div1_hidden").dblclick(function(){
+		$("#div1_hidden").fadeOut();
+	});
+
+	$("#div2_hidden").Drag();
+	$("#div2_hidden").dblclick(function(){
+		$("#div2_hidden").fadeOut();
+	});
+
+	$("#div3_hidden").Drag();
+	$("#div3_hidden").dblclick(function(){
+		$("#div3_hidden").fadeOut();
+	});
+
+	$("#div4_hidden").Drag();
+	$("#div4_hidden").dblclick(function(){
+		$("#div4_hidden").fadeOut();
+	});
+
+	$("#div5_hidden").Drag();
+	$("#div5_hidden").dblclick(function(){
+		$("#div5_hidden").fadeOut();
+	});
+
+	$("#div6_hidden").Drag();
+	$("#div6_hidden").dblclick(function(){
+		$("#div6_hidden").fadeOut();
+	});
+
+	$("#div7_hidden").Drag();
+	$("#div7_hidden").dblclick(function(){
+		$("#div7_hidden").fadeOut();
+	});
+
+	$("#div8_hidden").Drag();
+	$("#div8_hidden").dblclick(function(){
+		$("#div8_hidden").fadeOut();
+	});
+
+	$("#div1").click(function(){
+		//alert("div1 clicked");
+		$("#div1_hidden").fadeIn();
+	});
+
+	$("#div2").click(function(){
+		$("#div2_hidden").fadeIn();
+	});
+
+	$("#div3").click(function(){
+		$("#div3_hidden").fadeIn();
+	});
+
+	$("#div4").click(function(){
+		$("#div4_hidden").fadeIn();
+	});
+
+	$("#div5").click(function(){
+		$("#div5_hidden").fadeIn();
+	});
+
+	$("#div6").click(function(){
+		$("#div6_hidden").fadeIn();
+	});
+
+	$("#div7").click(function(){
+		$("#div7_hidden").fadeIn();
+	});
+
+	$("#div8").click(function(){
+		$("#div8_hidden").fadeIn();
+	});
+
+});
+
+</script>
+
+<div class="" style=" background-color:#C3C3C3; z-index:-10; " >
+	<p id="div1">Faker::Name.name</p>
+	<div class="" style=" background-color:#BBBBBB; width:90%; margin-left:10%; z-index:-9;">
+		<p id="div2" >Module Faker<br/>
+		class Name<br/>
+		def name<br/></p>
+		<div class="" style=" background-color:#9E9E9E; width:90%; margin-left:10%;">
+			<p id="div3">parse('name.name')<br/></p>
+			<div class="" style=" background-color:#909090; width:90%; margin-left:10%;" >
+				<p id="div4" >fetch(key)</p>
+				<div class="" style=" background-color:#7D7D7D; width:90%; margin-left:10%;">
+					<p  id="div5">translate("faker.#{key} ")</p>
+					<div class="" style=" background-color:#747272; width:90%; margin-left:10%;">
+						<p  id="div6">I18n.translate(*args.push(opts))</p>
+					</div>
+				</div><br/>
+				<div class="" style=" background-color:#7D7D7D; width:90%; margin-left:10%;">
+					if ~~~<br/>
+					<div class="" style=" background-color:#747272; width:90%; margin-left:10%;">
+						<p id="div7">regexify(key)</p>
+					</div>
+					else fetched<br/>
+					end
+				</div>
+			</div><br/>
+			<div class="" style=" background-color:#909090; width:90%; margin-left:10%;" >
+				<p id="div8">fetch(key) (same flow with the fetch above)</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<%= render 'faker/div1_hidden' %>
+<%= render 'faker/div2_hidden' %>
+<%= render 'faker/div3_hidden' %>
+<%= render 'faker/div4_hidden' %>
+<%= render 'faker/div5_hidden' %>
+<%= render 'faker/div6_hidden' %>
+<%= render 'faker/div7_hidden' %>
+<%= render 'faker/div8_hidden' %>

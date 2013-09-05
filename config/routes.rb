@@ -1,5 +1,6 @@
 Me::Application.routes.draw do
-  match '/faker', to: "skill#faker"
+  match 'faker', to: "skill#faker"
+  match 'source_code', to: "skill#source_code_analysis"
 
   match "/about", to:'static_page#about'
 
