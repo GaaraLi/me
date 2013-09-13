@@ -1,0 +1,29 @@
+<h4>1, Snapshot & AOF</h4>
+<div class="hero-unit" style=" background-color:#B3B3B3;">
+	<p>
+		There are two way to do the persistence for redis : Snapshot & AOF, and Snapshot is the default one. next , I will compare the two methods and give a good solution for the co-work of them.<br/>
+		<h4>Snapshot Advantages</h4>
+		<hr/>
+		1), Snapshot is faster than AOF, when recovery.<br/>
+		2), Snapshot makes the rdb file smaller than AOF file.<br/>
+		3), Snapshot fork a child thread to make sure there gonna be a usable rdb file.<br/>
+		4), Snapshot can manually controlled.<br/>
+		5), the rdb file can be used in Slave-Master synchronization.<br/>
+		<h4> Disadvantages</h4>
+		1), when taking the snapshot, the child thread will take as much space as the redis does, for example, when redis use 10G memory, it gonna be 20G when saved for snapshot.<br/>
+		2), when the disaster comes, the data need be saved from now to the last snapshot time will gone.<br/>
+		3), when save is called, the main thread may cost too much time in the snapshot ,the requrests from clients can be congested.
+		<hr/>
+		Advantages always comes with disadvantages, so in order to keep the goods and get rid or the evil, we come to the AOF.
+		<h4>AOF </h4>
+		<hr/>
+		1), append every write command to the end of the file, make sure the data is saved timely.<br/>
+		2), when the aof file is too big, rewrite it.<br/>
+		3), aof file is readable.<br/>
+		<hr/>
+		As we can see above , the two ways of redis persistence was created for working together( also the redis offically recommended). If you just want to take one of them, please figure the application clearly below and then make your choice.
+		1), you can accept some broken data when disaster coming ,you can choose snapshot only.
+		2), if you didn't take a good repartition of your memory space and don't want to loose any data when recovery , take AOF only. but you won't get a faster recovery also without Slave databases.
+		3), the highly recommended one, take them all, and set the config file properly, you can get all the advantages above.
+	</p>
+</div>

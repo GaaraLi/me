@@ -1,70 +1,45 @@
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script type="text/javascript" >
-
-(function (document) {
-	$.fn.Drag= function(){
-		var M= false;
-		var Rx, Ry;
-		var t= $(this);
-
-		t.mousedown(function (event){
-			Rx= event.pageX- (parseInt(t.css("left")) || 0);
-			Ry= event.pageY- (parseInt(t.css("top")) || 0);
-			t.css("position", "absolute").css('cursor','move').fadeTo(20,.8);
-			M= true;
-		})
-		.mouseup(function (event){
-			M= false;
-			t.fadeTo(20, 1);
-		});
-
-		$(document).mousemove(function (event){
-			if (M) {
-				t.css({
-					top: event.pageY- Ry,
-					left: event.pageX- Rx
-				});
-			}
-		});
-	}
-})(document);
-
+$(function(){
+	$("#div1_hidden").draggable({cursor:"move"});
+});
 $(document).ready(function(){
-	$("#div1_hidden").Drag();
+//	$("#div1_hidden").draggable();
 	$("#div1_hidden").dblclick(function(){
 		$("#div1_hidden").fadeOut();
 	});
 
-	$("#div2_hidden").Drag();
+//	$("#div2_hidden").Drag();
 	$("#div2_hidden").dblclick(function(){
 		$("#div2_hidden").fadeOut();
 	});
 
-	$("#div3_hidden").Drag();
+//	$("#div3_hidden").Drag();
 	$("#div3_hidden").dblclick(function(){
 		$("#div3_hidden").fadeOut();
 	});
 
-	$("#div4_hidden").Drag();
+//	$("#div4_hidden").Drag();
 	$("#div4_hidden").dblclick(function(){
 		$("#div4_hidden").fadeOut();
 	});
 
-	$("#div5_hidden").Drag();
+//	$("#div5_hidden").Drag();
 	$("#div5_hidden").dblclick(function(){
 		$("#div5_hidden").fadeOut();
 	});
 
-	$("#div6_hidden").Drag();
+//	$("#div6_hidden").Drag();
 	$("#div6_hidden").dblclick(function(){
 		$("#div6_hidden").fadeOut();
 	});
 
-	$("#div7_hidden").Drag();
+//	$("#div7_hidden").Drag();
 	$("#div7_hidden").dblclick(function(){
 		$("#div7_hidden").fadeOut();
 	});
 
-	$("#div8_hidden").Drag();
+//	$("#div8_hidden").Drag();
 	$("#div8_hidden").dblclick(function(){
 		$("#div8_hidden").fadeOut();
 	});

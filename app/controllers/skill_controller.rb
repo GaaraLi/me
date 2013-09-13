@@ -5,4 +5,12 @@ class SkillController < ApplicationController
 	
   def source_code_analysis
   end
+
+  def db
+  	
+  end
+  
+  def js
+  	
+  end
 end
