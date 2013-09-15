@@ -1,4 +1,7 @@
 Me::Application.routes.draw do
+  resources :comments
+#  match 'comments', to:"comments#index"
+#  match 'new_comment', to:"comments#new"
   match 'faker', to: "skill#faker"
   match 'source_code', to: "skill#source_code_analysis"
   match 'db', to: "skill#db"

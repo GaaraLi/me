@@ -1,20 +1,33 @@
 
 <div class="hero-unit center container-opacity"  id="div1" >
-	<a href="resume" class="btn btn-success  btn-large" method="get">
-		<h2>My Resume</h2>
+	<a href="">
+		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+		</div>
+		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+		</div>
+		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+		</div>
+		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+		</div>
 	</a>
 </div>
 
+
 <div class="hero-unit container-opacity homepage-link " id="div2" style=" opacity: 1; background-color:#DCDCDC;" >
-			<p style="word-spacing:20px; color:#A5A5A5;">Skill
+			<p style="word-spacing:30px; color:#A5A5A5;">Skill
 			<%= link_to "Source-Code-Analysis", source_code_path %>
 			<%= link_to "DB", db_path %>
 			<%= link_to "Front-end", js_path %></p>
-			<hr color="red" >
+			<hr />
 			<p style="word-spacing:30px; color:#A5A5A5;">Me
+			<%= link_to "resume", resume_path %>
 			<%= link_to "jekyll-blog", "#" %>
 			<%= link_to "everyday-positive", "#" %></p>
-			<hr color="red" >
+			<hr />
+			<p style="word-spacing:30px; color:#A5A5A5;">about
+			<%= link_to "contact", contact_path %>
+			<%= link_to "comment", comments_path %>
+			<hr />
 </div>
 
 
