@@ -1,0 +1,9 @@
+<div class="hero-unit">
+	<%= form_for @comment do |f| %>
+	<%= f.label :ip %>
+	<%= f.text_field :ip%>
+	<%= f.label :content %>
+	<%= f.text_area :content, :style=>"width:800px;" %><br/>
+	<%= f.submit "OK", :class=>"btn btn-primary btn-middle" %>
+	<% end%>
+</div>

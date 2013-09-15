@@ -1,0 +1,19 @@
+<div class="hero-unit center">
+	<%= link_to "leave your message", new_comment_path %>
+	<hr/>
+	<table class="table table-bordered" style=" overflow:scroll;">
+		<%if @comments.nil? %>
+			comments nil
+		<%else%>
+			<% @comments.each do |f| %>
+			<tr>
+				<% test="just for testing now..." %>
+				<th style=""> <%= request.remote_ip %></th>
+				<td style=""> <%= f.content if Rails.env.development? %>
+							  <%= test if Rails.env.production? %></td>
+				<td> <%= f.created_at.strftime("%m/%d/%Y %H:%M") %></td>
+			</tr>
+			<%end%>
+		<%end%>
+	</table>
+</div>
