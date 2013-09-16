@@ -1,15 +1,32 @@
 
-<div class="hero-unit center container-opacity"  id="div1" >
-	<a href="">
-		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+<div class="hero-unit container-opacity center"  id="div1" style="background-color:#DCDCDC; opacity:1;">
+	<%= link_to faker_path do %>
+		<div class="left_line_div left_div_shape" >
+			<%= image_tag("faker.png") %>
+			<hr/>
+			<p class="color:black;">
+				the source code analysis of faker
+			</p>
 		</div>
-		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+	<%end%>
+	<%= link_to resume_path do %>
+		<div class="left_line_div left_div_shape" >
+			<%= image_tag("resume.png") %>
+			<hr/>
+			<p class="color:black;">
+				my personal resume
+			</p>
 		</div>
-		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
+	<%end%>
+	<%= link_to db_redis_path do %>
+		<div class="left_line_div left_div_shape" >
+			<%= image_tag("redis.png") %>
+			<hr/>
+			<p class="color:black;">
+				about redis
+			</p>
 		</div>
-		<div class="hero-unit" style=" display:inline-block; width:100px; height:150px; background-color:#A5A5A5;">
-		</div>
-	</a>
+	<%end%>
 </div>
 
 
@@ -26,7 +43,7 @@
 			<hr />
 			<p style="word-spacing:30px; color:#A5A5A5;">about
 			<%= link_to "contact", contact_path %>
-			<%= link_to "comment", comments_path %>
+			<%= link_to "comment", comments_path if Rails.env.development?%>
 			<hr />
 </div>
 

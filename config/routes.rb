@@ -6,7 +6,7 @@ Me::Application.routes.draw do
   match 'source_code', to: "skill#source_code_analysis"
   match 'db', to: "skill#db"
   match 'js', to: "skill#js"
-  match 'db/redis', to: "skill#redis"
+  match 'db_redis', to: "skill#redis"
   match 'db/mongo', to: "skill#mongo"
 
   match "/about", to:'static_page#about'
