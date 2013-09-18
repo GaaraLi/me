@@ -1,6 +1,8 @@
 <div class="hero-unit center">
 	<%= link_to "leave your message", new_comment_path %>
 	<hr/>
+	<%= ip_reverse= IpReverse.reverse("119.178.225.92") %>
+	<hr/>
 	<table class="table table-bordered" style=" overflow:scroll;">
 		<%if @comments.nil? %>
 			comments nil

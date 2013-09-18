@@ -1,4 +1,6 @@
 Me::Application.routes.draw do
+  match '/chat_online',to:"chat_online#index"
+
   resources :comments
 #  match 'comments', to:"comments#index"
 #  match 'new_comment', to:"comments#new"
