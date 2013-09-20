@@ -1,4 +1,5 @@
 Me::Application.configure do
+  ENV["REDISTOGO_URL"] = 'redis://username:password@my.host:6389'
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
