@@ -7,7 +7,7 @@ gem 'redis'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'ip_reverse'
 #gem 'activerecord-postgresql-adapter'
 gem 'better_errors'
