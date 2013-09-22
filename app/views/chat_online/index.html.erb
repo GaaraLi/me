@@ -6,7 +6,8 @@
   <script src="http://localhost:4000/socket.io/socket.io.js"></script>
   <script>
     $(document).ready(function(){
-      var socket = io.connect('localhost', {port: 5001});
+
+      var socket = io.connect('/');
 
       socket.on('connect', function(){
         console.log("connect");
